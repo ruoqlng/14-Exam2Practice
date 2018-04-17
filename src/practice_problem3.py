@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 3.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and ruoqing.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -155,8 +155,13 @@ def practice_problem3a(circles):
     Type hints:
       :type sequence: [rg.Circle]
     """
+    product = 1
+    for k in range(len(circles)):
+        circle = circles[k]
+        product = product * circle.center.x
+    return product
     ####################################################################
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -265,8 +270,12 @@ def practice_problem3b(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+    for k in range(len(sequence) - 1):
+        if sequence[len(sequence) - 1] == sequence[k]:
+            return True
+    return False
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -353,8 +362,13 @@ def practice_problem3c(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+    seq = []
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            seq = seq + [k]
+    return seq
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -435,18 +449,26 @@ def practice_problem3d(sequence):
     Type hints:
       :type: sequence: list    or tuple or string
     """
+
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            return k
+    return -1
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ####################################################################
-
+    s = practice_problem3c()
+    if len(s) > 0:
+        return s[0]
+    return -1
 
     ####################################################################
-    # TODO: 6. Just ABOVE this TODO, you should have implemented
+    # DONE: 6. Just ABOVE this TODO, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
@@ -521,8 +543,13 @@ def practice_problem3e(sequence):
     Type hints:
       :type sequence: list(float)    or tuple(float)
     """
+    total = 0
+    for k in range(0, len(sequence), 2):
+        total = total + sequence[k]
+    return total
+
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
